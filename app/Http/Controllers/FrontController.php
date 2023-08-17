@@ -12,6 +12,6 @@ class FrontController extends Controller
     }
     
     function ListPost (Request $request) {
-        return response()->json(Event::all());
+        return Event::get();
     }
 }

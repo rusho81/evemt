@@ -7,10 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FrontController;
 use App\Http\Middleware\TokenVarificationMiddleware;
 
-//Frontend
 
-Route::get('/',[FrontController::class, 'FrontPage']);
-Route::get('/list-event',[FrontController::class, 'ListPost']);
 
 //API Route
 Route::post('/user-registration', [UserController::class, 'UserRegistration']);
@@ -44,3 +41,7 @@ Route::post('/delete-event',[EventController::class, 'EventDelete'])->middleware
 Route::get('/list-event',[EventController::class, 'EventList'])->middleware([TokenVarificationMiddleware::class]);
 Route::post('/update-event',[EventController::class, 'EventUpdate'])->middleware([TokenVarificationMiddleware::class]);
 Route::post('/event-by-id',[EventController::class, 'EventById'])->middleware([TokenVarificationMiddleware::class]);
+
+
+Route::get('/',[FrontController::class, 'FrontPage']);
+Route::get('/list-event',[FrontController::class, 'ListPost']);
